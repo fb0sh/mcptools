@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcptools"
+version = "1.0.0"
+description = "通用 MCP 工具注册系统"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.optional-dependencies]
+full = [
+    "psutil>=5.9",
+]
+
+[project.scripts]
+mcptools = "mcptools.server:main"
+
+[tool.setuptools.packages.find]
+include = ["mcptools*"]
